@@ -1,0 +1,41 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for Project-Assemble",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheGradients/Assemble.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "backend"
+  ],
+  "author": "TheGradients",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheGradients/Assemble/issues"
+  },
+  "homepage": "https://github.com/TheGradients/Assemble#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "bull": "^4.16.5",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ioredis": "^5.4.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.4",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.4",
+    "zod": "^3.23.8"
+  }
+}
