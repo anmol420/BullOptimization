@@ -1,0 +1,4 @@
+docker run -p 6369:6379 -d --name redis6 redis:latest 
+docker start redis6
+docket stop redis6
+docket log redis6
