@@ -2,6 +2,7 @@ import passwordQueue from "./passwordQueue.js";
 import bcrypt from "bcryptjs";
 import { User } from "../../models/user.models.js";
 import ApiError from "../ApiError.js"
+import { sendVerificationEmail } from "../nodemailer/email.js";
 const jobResults = new Map();
 
 passwordQueue.process(async (job)=>{
@@ -16,6 +17,8 @@ passwordQueue.process(async (job)=>{
         );
     
         jobResults.set(job.id, { username: user.username, hashedPassword });
+        await sendVerificationEmail(user.email,user.verificationCode)
+
     } catch (error) {
         console.error(`Failed to hash password for user: ${userId}`, err);
         jobResults.set(job.id, { error: "Password hashing failed." });

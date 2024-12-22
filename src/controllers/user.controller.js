@@ -37,10 +37,10 @@ const registerUser = asyncHandler(async (req, res) => {
         });
         
         //bull queue 
-        const job = await passwordQueue.add({ userId: user._id, plainPassword: password });
+        const job = await passwordQueue.add({ userId: user._id, plainPassword: password ,});
 
 
-        await sendVerificationEmail(user.email, user.verificationCode);
+        //await sendVerificationEmail(user.email, user.verificationCode);
         return res
             .status(202)
             .json(new ApiResponse(202, { user,game, jobId: job.id }, "User registered. Password is being hashed."));
